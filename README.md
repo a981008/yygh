@@ -9,6 +9,7 @@
 以下只展示当前已完成的模块
 
 ```
+yygh-parent
 ├── common                 # 公共模块
 │   │── common-util        # 工具类模块，所有模块都可以依赖于它
 │   └── service-util       # 服务的工具包，包含 service 服务的公共配置类，所有 service 模块依赖于它
