@@ -79,4 +79,22 @@ public class HospitalSetController {
     public Result batchRemoveHospSet(@RequestBody List<Long> ids) {
         return hospitalSetService.removeBatchByIds(ids) ? Result.ok() : Result.fail();
     }
+
+    @ApiOperation("锁定和解锁")
+    @PutMapping("/lock/{id}/{status}")
+    public Result lockHospSet(@PathVariable Long id, @PathVariable Integer status) {
+        HospitalSet hospitalSet = hospitalSetService.getById(id);
+        hospitalSet.setStatus(status);
+        return hospitalSetService.updateById(hospitalSet) ? Result.ok() : Result.fail();
+    }
+
+    @ApiOperation("发送签名密钥")
+    @GetMapping("/key/{id}")
+    public Result sendKey(@PathVariable Long id) {
+        HospitalSet hospitalSet = hospitalSetService.getById(id);
+        String signKey = hospitalSet.getSignKey();
+        String hoscode = hospitalSet.getHoscode();
+        // TODO 发送短信
+        return Result.ok();
+    }
 }
