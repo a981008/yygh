@@ -1,12 +1,13 @@
 package com.wang.yygh.hosp.controller;
 
 import cn.hutool.crypto.digest.MD5;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.ObjectUtils;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.wang.yygh.common.exception.YyghException;
 import com.wang.yygh.common.result.Result;
+import com.wang.yygh.common.result.ResultCodeEnum;
 import com.wang.yygh.hosp.service.HospitalSetService;
 import com.wang.yygh.model.hosp.HospitalSet;
 import com.wang.yygh.vo.hosp.HospitalSetQueryVo;
@@ -20,9 +21,12 @@ import java.util.Random;
 
 
 /**
+ * 跨域：协议、IP、端口号
+ *
  * @author Wang
  * @since 2022/1/25
  */
+@CrossOrigin
 @Api(tags = "医院设置管理")
 @RestController
 @RequestMapping("/admin/hosp/hospitalSet")
@@ -37,18 +41,21 @@ public class HospitalSetController {
     }
 
     @ApiOperation("查询医院设置信息")
-    @GetMapping("/{current}/{limit}")
+    @PostMapping("/batch/{current}/{limit}")
     public Result findPageHospSet(@PathVariable Long current,
                                   @PathVariable Long limit,
-                                  HospitalSetQueryVo queryVo) {
+                                  @RequestBody(required = false) HospitalSetQueryVo queryVo) {
 
-        String hosname = queryVo.getHosname();
-        String hoscode = queryVo.getHoscode();
+        LambdaQueryChainWrapper<HospitalSet> wrapper = hospitalSetService.lambdaQuery();
 
-        Page<HospitalSet> page = hospitalSetService.lambdaQuery()
-                .like(StringUtils.isNotEmpty(hosname), HospitalSet::getHosname, hosname)
-                .eq(StringUtils.isNotEmpty(hoscode), HospitalSet::getHoscode, hoscode)
-                .page(new Page<>(current, limit));
+        if (ObjectUtils.isNotNull(queryVo)) {
+            String hosname = queryVo.getHosname();
+            String hoscode = queryVo.getHoscode();
+            wrapper.like(StringUtils.isNotEmpty(hosname), HospitalSet::getHosname, hosname)
+                    .eq(StringUtils.isNotEmpty(hoscode), HospitalSet::getHoscode, hoscode);
+        }
+
+        Page<HospitalSet> page = wrapper.page(new Page<>(current, limit));
 
         return Result.ok(page);
     }

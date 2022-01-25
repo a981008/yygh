@@ -42,3 +42,8 @@ mybatis-plus:
 #feign:
 #  sentinel:
 #    enabled: true
+
+#
+#logging:
+#  level:
+#    root: warn

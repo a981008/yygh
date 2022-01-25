@@ -1,8 +1,12 @@
 # 项目简介
 
-本项目来自尚硅谷的[尚医通](https://www.bilibili.com/video/BV1V5411K7rT)
+本项目来自尚硅谷的[尚医通](https://www.bilibili.com/video/BV1V5411K7rT) ，主要是后端代码
 
 项目代码与课上代码有些不同
+
+前端代码：[在这](https://github.com/a981008/yygh-admin)
+
+> 本人不会前端，只保证该项目勉强能跑，奇奇怪怪的问题我也不懂。
 
 # 项目结构
 
