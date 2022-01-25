@@ -63,8 +63,12 @@ public class HospitalSetController {
     @ApiOperation("添加医院设置")
     @PostMapping
     public Result insertHospSet(@RequestBody HospitalSet hospitalSet) {
-        MD5 md5 = new MD5((System.currentTimeMillis() + "" + new Random().nextInt(1000)).getBytes());
-        hospitalSet.setStatus(1).setSignKey(md5.toString());
+
+        String key = new MD5()
+                .digestHex(System.currentTimeMillis() + "" + new Random().nextInt(1000));
+
+        hospitalSet.setStatus(1).setSignKey(key);
+
         return hospitalSetService.save(hospitalSet) ? Result.ok() : Result.fail();
     }
 

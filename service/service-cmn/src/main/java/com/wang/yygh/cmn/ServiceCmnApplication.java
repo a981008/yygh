@@ -1,21 +1,20 @@
-package com.wang.yygh.hosp;
+package com.wang.yygh.cmn;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
  * @author Wang
  * @since 2022/1/25
  */
+
 @SpringBootApplication
-@MapperScan("com.wang.yygh.hosp.mapper")
+@MapperScan("com.wang.yygh.cmn.mapper")
 @ComponentScan(basePackages = "com.wang.yygh")
-public class ServiceHospApplication {
+public class ServiceCmnApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ServiceHospApplication.class, args);
+        SpringApplication.run(ServiceCmnApplication.class, args);
     }
 }

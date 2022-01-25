@@ -1,0 +1,49 @@
+# 服务端口
+server:
+  port: 8202
+
+spring:
+  application:
+    name: service-cmn # 服务名
+  profiles:
+    active: dev # 环境设置：dev、test、prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yygh_cmn?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 88888888
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
+#    sentinel:
+#      transport:
+#        dashboard: http://localhost:8858
+#  data:
+#    mongodb:
+#      host: 127.0.0.1
+#      port: 27017
+#      database: yygh_hosp
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
+
+mybatis-plus:
+  mapper-locations: classpath:com/wang/yygh/mapper/xml/*.xml
+
+#feign:
+#  sentinel:
+#    enabled: true
+
+#
+#logging:
+#  level:
+#    root: warn

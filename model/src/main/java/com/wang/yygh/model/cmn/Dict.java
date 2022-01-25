@@ -62,6 +62,10 @@ public class Dict {
     @TableField("dict_code")
     private String dictCode;
 
+
+    /**
+     * element-UI 需要的
+     */
     @ApiModelProperty(value = "是否包含子节点")
     @TableField(exist = false)
     private boolean hasChildren;
