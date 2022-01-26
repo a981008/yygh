@@ -7,10 +7,19 @@
 前端代码：[在这](https://github.com/a981008/yygh-admin)
 
 > 本人不会前端，只保证该项目勉强能跑，奇奇怪怪的问题我也不懂。
+ 
+所用到的技术：
+* SpringBoot、SpringCloud（Gateway、Nacos、Sentinel、Task、Feign）
+* MyBatis、MyBatis Plus
+* MySQL、Redis、MongoDB
+* RabbitMQ
+* HTTPClient
+* Swagger2
+* Nginx
 
 # 项目结构
 
-以下只展示当前已完成的模块
+以下只展示当前项目出现的模块
 
 ```
 yygh-parent
@@ -19,6 +28,7 @@ yygh-parent
 │   └── service-util       # 服务的工具包，包含 service 服务的公共配置类，所有 service 模块依赖于它
 ├── model                  # 实体类模块
 ├── service                # 服务 api 接口父节点
+│   │── service-cmn        # 数据字典 api 接口服务
 │   │── service-hosp       # 医院 api 接口服务
 │   └── service-user       # 用户 api 接口服务
 └── 资源                    # 存放 SQL 等资源
