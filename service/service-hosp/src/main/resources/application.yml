@@ -25,11 +25,11 @@ spring:
 #    sentinel:
 #      transport:
 #        dashboard: http://localhost:8858
-#  data:
-#    mongodb:
-#      host: 127.0.0.1
-#      port: 27017
-#      database: yygh_hosp
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: yygh_hosp
 #  rabbitmq:
 #    host: 127.0.0.1
 #    port: 5672
@@ -43,7 +43,7 @@ mybatis-plus:
 #  sentinel:
 #    enabled: true
 
-#
-#logging:
-#  level:
-#    root: warn
+
+logging:
+  level:
+    root: INFO

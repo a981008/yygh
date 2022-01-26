@@ -1,4 +1,4 @@
-package com.wang.yygh.common.result;
+package com.wang.yygh.common.util;
 
 import lombok.Getter;
 

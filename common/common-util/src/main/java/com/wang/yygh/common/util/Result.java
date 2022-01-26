@@ -1,4 +1,4 @@
-package com.wang.yygh.common.result;
+package com.wang.yygh.common.util;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

@@ -1,8 +1,7 @@
 package com.wang.yygh.cmn.controller;
 
 import com.wang.yygh.cmn.service.DictService;
-import com.wang.yygh.common.result.Result;
-import com.wang.yygh.vo.cmn.DictEeVo;
+import com.wang.yygh.common.util.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

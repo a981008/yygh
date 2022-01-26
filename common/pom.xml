@@ -14,11 +14,15 @@
     <version>1.0</version>
 
     <modules>
-        <module>common-util</module>
         <module>service-util</module>
+        <module>common-util</module>
     </modules>
 
     <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
         <dependency>
             <groupId>cn.hutool</groupId>

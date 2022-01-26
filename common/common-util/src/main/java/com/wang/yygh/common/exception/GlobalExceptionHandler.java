@@ -4,7 +4,7 @@ package com.wang.yygh.common.exception;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.wang.yygh.common.result.Result;
+import com.wang.yygh.common.util.Result;
 
 /**
  * 全局异常处理

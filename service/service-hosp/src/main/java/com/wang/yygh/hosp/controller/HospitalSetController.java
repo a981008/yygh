@@ -5,9 +5,7 @@ import com.baomidou.mybatisplus.core.toolkit.ObjectUtils;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.wang.yygh.common.exception.YyghException;
-import com.wang.yygh.common.result.Result;
-import com.wang.yygh.common.result.ResultCodeEnum;
+import com.wang.yygh.common.util.Result;
 import com.wang.yygh.hosp.service.HospitalSetService;
 import com.wang.yygh.model.hosp.HospitalSet;
 import com.wang.yygh.vo.hosp.HospitalSetQueryVo;
@@ -27,7 +25,7 @@ import java.util.Random;
  * @since 2022/1/25
  */
 @CrossOrigin
-@Api(tags = "医院设置管理")
+@Api(tags = "医院设置管理API接口")
 @RestController
 @RequestMapping("/admin/hosp/hospitalSet")
 public class HospitalSetController {
