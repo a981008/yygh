@@ -24,14 +24,17 @@
 
 ```
 yygh-parent
-├── common                 # 公共模块
-│   │── common-util        # 工具类模块，所有模块都可以依赖于它
-│   └── service-util       # 服务的工具包，包含 service 服务的公共配置类，所有 service 模块依赖于它
-├── model                  # 实体类模块
-├── service                # 服务 api 接口父节点
-│   │── service-cmn        # 数据字典 api 接口服务
-│   │── service-hosp       # 医院 api 接口服务
-│   └── service-user       # 用户 api 接口服务
-└── 资源                    # 存放 SQL、前端代码
+├── common                     # 公共模块
+│   │── common-util            # 工具类模块，所有模块都可以依赖于它
+│   └── service-util           # 服务的工具包，包含 service 服务的公共配置类，所有 service 模块依赖于它
+├── model                      # 实体类模块
+├── service                    # 服务 api 接口父节点
+│   │── service-cmn            # 公共 api 接口服务
+│   │── service-hosp           # 医院 api 接口服务
+│   └── service-user           # 用户 api 接口服务
+├── service-client             # feign 服务调用父节点
+│   └── service-client-cmn     # 公共 api 接口
+├── service-gateway            # 服务网关
+└── 资源                        # 存放 SQL、前端代码
 ```
 
