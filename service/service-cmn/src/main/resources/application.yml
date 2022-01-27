@@ -1,6 +1,6 @@
 # 服务端口
 server:
-  port: 8201 # 8202
+  port: 8202 # 8202
 
 spring:
   application:
@@ -29,10 +29,10 @@ spring:
         max-wait: 1
         max-idle: 5
         min-idle: 0
-#  cloud:
-#    nacos:
-#      discovery:
-#        server-addr: 127.0.0.1:8848
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
 #    sentinel:
 #      transport:
 #        dashboard: http://localhost:8858

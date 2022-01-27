@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
 import lombok.Data;
 import org.springframework.data.annotation.Transient;

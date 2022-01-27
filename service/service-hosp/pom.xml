@@ -16,6 +16,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.wang.yygh</groupId>
+            <artifactId>service-client-cmn</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 
     <build>

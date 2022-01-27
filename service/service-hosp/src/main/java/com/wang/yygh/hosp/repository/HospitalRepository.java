@@ -10,8 +10,4 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface HospitalRepository extends MongoRepository<Hospital, String> {
-    /**
-     * 获取Hospital
-     */
-    Hospital getHospitalByHoscode(String hoscode);
 }

@@ -19,4 +19,10 @@ public interface DictService extends IService<Dict> {
      * 导入
      */
     void importData(MultipartFile response);
+
+    String getDictName(String dictCode, String value);
+
+    String getDictName(String value);
+
+    List<Dict> findByDictCode(String dictCode);
 }

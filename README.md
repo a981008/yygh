@@ -4,7 +4,8 @@
 
 项目代码与课上代码有些不同
 
-前端代码：[在这](https://github.com/a981008/yygh-admin)
+所需资源：[前端代码](资源/前端代码)、[SQL](资源/SQL)
+
 
 > 本人不会前端，只保证该项目勉强能跑，奇奇怪怪的问题我也不懂。
  
@@ -31,6 +32,6 @@ yygh-parent
 │   │── service-cmn        # 数据字典 api 接口服务
 │   │── service-hosp       # 医院 api 接口服务
 │   └── service-user       # 用户 api 接口服务
-└── 资源                    # 存放 SQL 等资源
+└── 资源                    # 存放 SQL、前端代码
 ```
 

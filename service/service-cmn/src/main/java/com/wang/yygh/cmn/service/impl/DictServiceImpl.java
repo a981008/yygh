@@ -1,6 +1,7 @@
 package com.wang.yygh.cmn.service.impl;
 
 import com.alibaba.excel.EasyExcel;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wang.yygh.cmn.listener.DictListener;
@@ -71,6 +72,37 @@ public class DictServiceImpl extends ServiceImpl<DictMapper, Dict> implements Di
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public String getDictName(String dictCode, String value) {
+        if (StringUtils.isEmpty(dictCode)) {
+            return baseMapper.selectOne(Wrappers.<Dict>lambdaQuery()
+                            .eq(Dict::getValue, value))
+                    .getName();
+        } else {
+            Dict dict = getDictByDictCode(dictCode);
+
+            return baseMapper.selectOne(Wrappers.<Dict>lambdaQuery()
+                            .eq(Dict::getParentId, dict.getId()).eq(Dict::getValue, value))
+                    .getName();
+        }
+    }
+
+    private Dict getDictByDictCode(String dictCode) {
+        return baseMapper.selectOne(Wrappers.<Dict>lambdaQuery()
+                .eq(Dict::getDictCode, dictCode));
+    }
+
+    @Override
+    public String getDictName(String value) {
+        return getDictName(null, value);
+    }
+
+    @Override
+    public List<Dict> findByDictCode(String dictCode) {
+        Dict dict = getDictByDictCode(dictCode);
+        return findChildData(dict.getId());
     }
 
     /**

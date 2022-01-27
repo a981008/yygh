@@ -1,6 +1,5 @@
 package com.wang.yygh.vo.hosp;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 

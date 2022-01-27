@@ -18,10 +18,10 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
-#  cloud:
-#    nacos:
-#      discovery:
-#        server-addr: 127.0.0.1:8848
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost
 #    sentinel:
 #      transport:
 #        dashboard: http://localhost:8858
